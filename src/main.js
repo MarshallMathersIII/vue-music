@@ -1,6 +1,7 @@
+import 'babel-polyfill'
 import Vue from 'vue'
 import App from '@/App.vue'
-import 'babel-polyfill'
+import router from './router/index.js'
 //点击延时
 import fastlick from 'fastclick'
 //基础样式
@@ -11,5 +12,6 @@ Vue.config.productionTip = false
 fastlick.attach(document.body)
 
 new Vue({
-  render: h => h(App)
+  render: h => h(App),
+  router
 }).$mount('#app')
