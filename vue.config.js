@@ -5,5 +5,6 @@ module.exports = {
       // 语法： .set(别名,路径)
       .set('components', '@/components')
       .set('common', '@/common')
+      .set('api', '@/api')
   }
 }
