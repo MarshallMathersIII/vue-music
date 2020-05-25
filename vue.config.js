@@ -11,6 +11,7 @@ module.exports = {
       .set('components', '@/components')
       .set('common', '@/common')
       .set('api', '@/api')
+      .set('base', '@/base')
   },
   devServer: {
     before(app) {
