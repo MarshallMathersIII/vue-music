@@ -84,6 +84,7 @@ export default {
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
 @import "~common/stylus/variable"
+//better-scroll父容器高度需固定
 .recommend
     position: fixed
     width: 100%
