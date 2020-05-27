@@ -1,10 +1,11 @@
 <template>
-  <div class="recommend">
-    singer
+  <div class="singer">
+    <list-view :data="singers"></list-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+    import ListView from 'base/listview/listview'
     import {getSingerList} from 'api/singer'
     import {ERR_OK} from 'api/config'
     import Singer from 'common/js/singer'
@@ -15,10 +16,11 @@
 export default {
      data() {
         return {
-
+            singers:[]
         }
     },
     components:{
+        ListView
     },
     created(){
         this._getSingerList()
@@ -81,7 +83,7 @@ export default {
 <style scoped lang="stylus" rel="stylesheet/stylus">
 @import "~common/stylus/variable"
 //better-scroll父容器高度需固定
-.recommend
+.singer
     position: fixed
     width: 100%
     top: 88px
