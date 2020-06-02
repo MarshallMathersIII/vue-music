@@ -6,24 +6,55 @@
 
 <script type="text/ecmascript-6">
 // import ListView from 'base/listview/listview'
-// import {getSingerList} from 'api/singer'
-// import {ERR_OK} from 'api/config'
-// import Singer from 'common/js/singer'
+import {getSingerDetail} from 'api/singer'
+import {ERR_OK} from 'api/config'
 import {mapGetters} from 'vuex'
+import {createSong } from 'common/js/song'
+
 
 
 
 
 export default {
+  data() {
+    return {
+      songs:[]
+    }
+  },
   computed: {
     ...mapGetters([
+      //语法糖等同于 console.log(this.$store.getters.singer)
       "singer"
     ])
   },
   created() {
-    console.log(this.singer)
-    console.log(this.$store.getters.singer)
-
+    this._getDetail()
+    console.log("vuex传入歌手实例",this.singer)
+  },
+  methods: {
+    //边界处理
+    _getDetail(){
+      if (!this.singer.id) {
+        this.$router.push('/singer')
+        return
+      }
+      getSingerDetail(this.singer.id).then((res) => {
+          if (res.code === ERR_OK) {
+            this.singers = this._normalizeSongs(res.data.list)
+            console.log(this.singers)
+          }
+        })
+    },
+    _normalizeSongs(list) {
+        let ret = []
+        list.forEach((item) => {
+          let {musicData} = item
+          if (musicData.songid&&musicData.albummid) {
+            ret.push(createSong(musicData))
+          }
+        })
+        return ret
+      }
   },
 
 }

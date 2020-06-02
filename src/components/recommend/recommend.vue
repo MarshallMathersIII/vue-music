@@ -90,6 +90,7 @@ export default {
     width: 100%
     top: 88px
     bottom: 0
+    touch-action: none;
     .recommend-content
         height: 100%
         overflow: hidden

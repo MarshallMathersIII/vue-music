@@ -34,8 +34,8 @@ export default {
       this.$router.push({
         path: `/singer/${singer.id}`,
       })
-      // this.setSinger(singer)
-      this.$store.commit("SET_SINGER",singer)
+      this.setSinger(singer)
+      // this.$store.commit("SET_SINGER",singer)
     },
     _getSingerList() {
       getSingerList().then((res) => {
@@ -86,6 +86,10 @@ export default {
       })
       return hot.concat(ret)
     },
+    //  mapMutations相当于指向该方法
+    // [types.SET_SINGER](state, singer) {
+    // state.singer = singer
+    // }
     ...mapMutations({
       setSinger:"SET_SINGER"
     })
@@ -102,4 +106,5 @@ export default {
   top: 88px
   bottom: 0
   width: 100%
+  touch-action: none
 </style>
