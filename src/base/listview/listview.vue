@@ -98,6 +98,7 @@ export default {
     this.listHeight = []
   },
   methods: {
+      //派发事件
     selectItem(item) {
       this.$emit('select', item)
     },

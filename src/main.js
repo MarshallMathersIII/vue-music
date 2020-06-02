@@ -12,6 +12,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 require('swiper/dist/css/swiper.css')
 //懒加载
 import VueLazyload from 'vue-lazyload'
+import store from './store'
 
 Vue.config.productionTip = false
 fastlick.attach(document.body)
@@ -25,5 +26,6 @@ Vue.use(VueLazyload, {
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')
