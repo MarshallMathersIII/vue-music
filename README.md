@@ -34,3 +34,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ESLint + Prettier + VS Code + Vue-cli 统一代码风格，自动格式化](https://juejin.im/post/5cda310cf265da035b61b99b)
 - [VS Code 插件](https://www.jianshu.com/p/dc2f1c7ace29)
 - [Mac vscode快捷键](https://segmentfault.com/a/1190000012811886)
+- [ESlint配置](https://blog.csdn.net/qq_34645412/article/details/78974413)

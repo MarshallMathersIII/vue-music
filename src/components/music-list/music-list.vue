@@ -99,6 +99,7 @@ export default {
     back() {
       this.$router.back()
     },
+    //播放时间监听
     selectItem(item, index) {
       this.selectPlay({
         list: this.songs,

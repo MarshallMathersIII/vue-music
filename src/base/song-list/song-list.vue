@@ -1,7 +1,12 @@
 <template>
   <div class="song-list">
     <ul>
-      <li class="item" v-for="(song, index) in songs" :key="index">
+      <li
+        @click="selectItem(song, index)"
+        class="item"
+        v-for="(song, index) in songs"
+        :key="index"
+      >
         <div class="content">
           <h2 class="name">{{ song.name }}</h2>
           <p class="desc">{{ getDesc(song) }}</p>
@@ -24,6 +29,10 @@ export default {
     getDesc(song) {
       //es6字符串模版占位，等价于song.singer+"."+song.album
       return `${song.singer}·${song.album}`
+    },
+    //此为基础组件，不处理业务逻辑，只派发时间给调用组件
+    selectItem(item,index){
+      this.$emit("select",item,index)
     }
   }
 }
